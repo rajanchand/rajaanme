@@ -1,0 +1,70 @@
+---
+import { Icon } from 'astro-icon';
+
+const items = [
+	[
+		{
+			title: 'Web Application Development',
+			description:
+				'Design your web apps, Showcase your products, Build your vision to power your growth.',
+			icon: 'tabler:brand-tailwind',
+		},
+		{
+			title: 'Mobile Application Development',
+			description:
+				'Custom Mobile App Development to Elevate Your Business and resolve Consumer needs.',
+			icon: 'tabler:components',
+		}
+	],
+	[
+		{
+			title: 'Technical Consultation',
+			description:
+				'Expert Technical Support for All Your Business Needs',
+			icon: 'tabler:arrows-right-left',
+		},
+		{
+			title: 'Search Engine Optimization (SEO)',
+			description:
+				'Maximize Your Online Visibility with Proven SEO Service Support',
+			icon: 'tabler:list-check',
+		}
+	],
+];
+---
+
+<section class="scroll-mt-16" id="features">
+	<div class="px-4 py-16 mx-auto max-w-7xl lg:px-8 lg:py-20">
+		<div class="mb-10 md:mx-auto sm:text-center md:mb-12 max-w-3xl">
+			<p class="text-base text-primary-600 dark:text-primary-200 font-semibold tracking-wide uppercase">Technical Knowledge</p>
+			<h2 class="text-4xl md:text-4xl font-bold leading-tighter tracking-tighter mb-4 font-heading">
+				<span class="whitespace-nowrap">View my Expertise </span>
+			</h2>
+			<!-- <p class="max-w-3xl mx-auto sm:text-center text-xl text-gray-600 dark:text-slate-400">
+				Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque rem aperiam, eaque ipsa
+				quae.
+			</p> -->
+		</div>
+		<div class="grid mx-auto space-y-6 md:grid-cols-2 md:space-y-0">
+			{
+				items.map((subitems) => (
+					<div class="space-y-8 sm:px-8">
+						{subitems.map(({ title, description, icon }) => (
+							<div class="flex flex-row max-w-md">
+								<div class="mb-4 mr-4">
+									<div class="flex items-center justify-center w-12 h-12 rounded-full bg-primary-500 dark:bg-primary-700">
+										{icon && <Icon name={icon} class="w-6 h-6 text-white icon-light" />}
+									</div>
+								</div>
+								<div class="h-32">
+									<h3 class="mb-3 text-xl font-bold">{title}</h3>
+									<p class="text-gray-600 dark:text-slate-400">{description}</p>
+								</div>
+							</div>
+						))}
+					</div>
+				))
+			}
+		</div>
+	</div>
+</section>

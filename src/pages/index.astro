@@ -1,0 +1,29 @@
+---
+import { SITE } from '~/config.mjs';
+import { getCanonical, getHomePermalink } from '~/utils/permalinks';
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Expertise from '~/components/widgets/Expertise.astro';
+import Projects from '~/components/widgets/Projects.astro';
+import WorkExperience from '~/components/widgets/WorkExperience.astro';
+import FeaturedPosts from '~/components/blog/FeaturedPosts.astro';
+// import FAQs from '~/components/widgets/FAQs.astro';
+// import Stats from '~/components/widgets/Stats.astro';
+
+const meta = {
+	title: SITE.title,
+	description: SITE.description,
+	canonical: getCanonical(getHomePermalink()),
+};
+---
+
+<Layout {meta}>
+	<Hero />
+	<Expertise />
+	<WorkExperience />
+	<Projects />
+	<FeaturedPosts />
+	<!-- <FAQs /> -->
+	<!-- <Stats /> -->
+</Layout>
